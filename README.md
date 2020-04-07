@@ -26,4 +26,6 @@ clearvariables (sets all integers, strings, characters and booleans to their def
 
 clear (Cleares the screen)
 
-loopback (Loopback the program)
+wait: (makes the script waits the number of milliseconds)
+
+loopback: (Loopback the program the number of time)
