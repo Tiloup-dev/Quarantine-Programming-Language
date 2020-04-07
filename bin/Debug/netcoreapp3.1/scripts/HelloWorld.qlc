@@ -1,0 +1,9 @@
+﻿This script writes Hello, World! to the screen. In Quarantine language you don't have to specify the comments. You just need to not use words like pr1nt.
+
+string:Hello,
+string2:World!
+There is only two str1ngs avaible for now.
+
+Write data to screen
+print(string)
+print(string2)

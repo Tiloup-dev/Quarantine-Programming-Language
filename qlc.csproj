@@ -7,4 +7,10 @@
     <AssemblyName>qlc</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="scripts\HelloWorld.qlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

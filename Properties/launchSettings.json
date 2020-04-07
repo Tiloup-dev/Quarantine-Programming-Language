@@ -2,7 +2,7 @@
   "profiles": {
     "qlc": {
       "commandName": "Project",
-      "commandLineArgs": "Test.qlc"
+      "commandLineArgs": "scripts/HelloWorld.qlc"
     }
   }
 }

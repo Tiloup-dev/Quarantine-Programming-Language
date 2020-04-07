@@ -18,8 +18,17 @@ namespace lsc
             string path = args[0];
             if(System.IO.File.Exists(path))
             {
-                Parser.Parse(path);
+                if (args.Length == 2)
+                {
+                    string isPaused = args[1];
+                    if (isPaused == "-pause")
+                    {
+                        Parser.Parse(path, true);
+                    }
+                } else
+                Parser.Parse(path, false);
             }
+            
             else
             {
                 Console.WriteLine("Failed to create an QLC console: INVALID PATH");

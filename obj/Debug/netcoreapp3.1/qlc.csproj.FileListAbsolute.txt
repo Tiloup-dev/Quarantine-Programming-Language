@@ -11,3 +11,4 @@ C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.Assembl
 C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.dll
 C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.pdb
 C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.genruntimeconfig.cache
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\scripts\HelloWorld.qlc

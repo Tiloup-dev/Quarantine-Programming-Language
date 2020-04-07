@@ -9,8 +9,9 @@ namespace lsc
 {
     public class Parser
     {
-        public static void Parse(string path)
+        public static void Parse(string path, bool isPause)
         {
+            //Program Variables
             string currentstringdata = "";
             string currentstringdata2 = "";
             char currentchardata = ' ';
@@ -341,7 +342,10 @@ namespace lsc
                     Console.Clear();
                 }
             }
-            Console.ReadLine();
+            if (isPause)
+            {
+                Console.ReadKey();
+            }
         }
     }
 }
