@@ -1,4 +1,3 @@
-﻿integer:(random)
-println(int)
-wait:500
-loopback:0
+﻿println:Hello, World!
+wait:100
+loopback:30

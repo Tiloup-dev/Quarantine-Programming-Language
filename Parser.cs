@@ -22,6 +22,8 @@ namespace lsc
             int currentintdata2 = 0;
             bool currentbooldata = false;
             bool currentbooldata2 = false;
+            double currentdoubledata = 0;
+            double currentdoubledata2 = 0;
 
             int loopbacker = 1;
             bool isLooped = false;
@@ -100,7 +102,6 @@ namespace lsc
                 {
                     Console.Write(currentintdata2 + "\n");
                 }
-
                 //BOOLEAN PRINTS
                 else if (line.Contains("print(bool)"))
                 {
@@ -216,16 +217,51 @@ namespace lsc
                 {
                     currentstringdata2 = currentstringdata2 + currentstringdata;
                 }
+                //CHARS FROM STRINGS
+                else if (line.Contains("string(char)?"))
+                {
+                    int pointer = line.IndexOf('?') + 1;
+                    int value = int.Parse(line.Substring(pointer, line.Length - 13));
+                    currentchardata = currentstringdata[value];
+                }
+                else if (line.Contains("string2(char)?"))
+                {
+                    int pointer = line.IndexOf('?') + 1;
+                    int value = int.Parse(line.Substring(pointer, line.Length - 14));
+                    currentchardata = currentstringdata[value];
+                }
+                else if (line.Contains("string(char2)?"))
+                {
+                    int pointer = line.IndexOf('?') + 1;
+                    int value = int.Parse(line.Substring(pointer, line.Length - 14));
+                    currentchardata2 = currentstringdata[value];
+                }
+                else if (line.Contains("string2(char2)?"))
+                {
+                    int pointer = line.IndexOf('?') + 1;
+                    int value = int.Parse(line.Substring(pointer, line.Length - 15));
+                    currentchardata2 = currentstringdata[value];
+                }
                 //INTS
                 if (line.Contains("integer:"))
                 {
                     currentintdata = 0;
                     int pointer = line.IndexOf(':') + 1;
                     string data = line.Substring(pointer, line.Length - 8);
-                    if (data == "(random)")
+                    if (data == "(random)[positive]")
                     {
                         Random random = new Random();
-                        currentintdata = random.Next();
+                        currentintdata = random.Next(0, 9999);
+                    }
+                    else if (data == "(random)[negative]")
+                    {
+                        Random random = new Random();
+                        currentintdata = random.Next(-9999, 0);
+                    }
+                    else if (data == "(random)")
+                    {
+                        Random random = new Random();
+                        currentintdata = random.Next(-9999, 9999);
                     }
                 }
                 else if (line.Contains("integer(readline)"))
@@ -238,17 +274,54 @@ namespace lsc
                 {
                     currentintdata2 = 0;
                     int pointer = line.IndexOf(':') + 1;
-                    string data = line.Substring(pointer, line.Length - 8);
-                    if (data == "(random)")
+                    string data = line.Substring(pointer, line.Length - 9);
+                    if (data == "(random)[positive]")
                     {
                         Random random = new Random();
-                        currentintdata2 = random.Next();
+                        currentintdata2 = random.Next(0, 9999);
+                    }
+                    else if (data == "(random)[negative]")
+                    {
+                        Random random = new Random();
+                        currentintdata2 = random.Next(-9999, 0);
+                    }
+                    else if (data == "(random)")
+                    {
+                        Random random = new Random();
+                        currentintdata2 = random.Next(-9999, 0);
                     }
                 }
                 else if (line.Contains("integer2(readline)"))
                 {
                     currentintdata2 = 0;
                     currentintdata2 = int.Parse(Console.ReadLine());
+                }
+                //SECOND INTS
+                if (line.Contains("double2:"))
+                {
+                    currentdoubledata2 = 0;
+                    int pointer = line.IndexOf(':') + 1;
+                    string data = line.Substring(pointer, line.Length - 8);
+                    if (data == "(random)[positive]")
+                    {
+                        Random random = new Random();
+                        currentdoubledata2 = random.NextDouble();
+                    }
+                    else if (data == "(random)[negative]")
+                    {
+                        Random random = new Random();
+                        currentdoubledata2 = random.NextDouble();
+                    }
+                    else if (data == "(random)")
+                    {
+                        Random random = new Random();
+                        currentdoubledata2 = random.NextDouble();
+                    }
+                }
+                else if (line.Contains("double2(readline)"))
+                {
+                    currentdoubledata2 = 0;
+                    currentdoubledata2 = int.Parse(Console.ReadLine());
                 }
 
                 //CHARACTERS
@@ -354,6 +427,8 @@ namespace lsc
                     currentintdata2 = 0;
                     currentstringdata = "";
                     currentstringdata2 = "";
+                    currentdoubledata = 0;
+                    currentdoubledata2 = 0;
                 }
 
                 if (line.Contains("clear"))
@@ -367,17 +442,84 @@ namespace lsc
                     int value = int.Parse(line.Substring(pointer, line.Length - 5));
                     Thread.Sleep(value);
                 }
+                else if (line.Contains("wait(int)"))
+                {
+                    Thread.Sleep(currentintdata);
+                }
+                else if (line.Contains("wait(int2)"))
+                {
+                    Thread.Sleep(currentintdata2);
+                }
 
                 if (line.Contains("loopback:"))
                 {
                     int pointer = line.IndexOf(':') + 1;
-                    int value = int.Parse(line.Substring(pointer, line.Length - 9));
+                    int value = 0;
+                    try
+                    {
+                        value = int.Parse(line.Substring(pointer, line.Length - 9));
+                    }
+                    catch
+                    {
+                        value = -1;
+                    }
                     while (loopbacker < value)
                     {
                         loopbacker++;
                         goto restart;
                     }
                 }
+                else if (line.Contains("loopback(int)"))
+                {
+                    while (loopbacker < currentintdata)
+                    {
+                        loopbacker++;
+                        goto restart;
+                    }
+                }
+                else if (line.Contains("loopback(int2)"))
+                {
+                    while (loopbacker < currentintdata2)
+                    {
+                        loopbacker++;
+                        goto restart;
+                    }
+                }
+                //Round
+                if (line.Contains("round(int,double)"))
+                {
+                    currentintdata = (int) Math.Round((decimal)currentdoubledata);
+                }
+                else if (line.Contains("round(int2,double)"))
+                {
+                    currentintdata2 = (int)Math.Round((decimal)currentdoubledata);
+                }
+                else if (line.Contains("round(int,double2)"))
+                {
+                    currentintdata = (int)Math.Round((decimal)currentdoubledata2);
+                }
+                else if (line.Contains("round(int2,double2"))
+                {
+                    currentintdata2 = (int)Math.Round((decimal)currentdoubledata2);
+                }
+                //Convert
+                if (line.Contains("convert(double,int)"))
+                {
+                    currentdoubledata = currentintdata;
+                }
+                else if (line.Contains("convert(double2,int)"))
+                {
+                    currentdoubledata2 = currentintdata;
+                }
+                else if (line.Contains("convert(double,int2)"))
+                {
+                    currentdoubledata = currentintdata2;
+                }
+                else if (line.Contains("convert(double2,int2)"))
+                {
+                    currentdoubledata2 = currentintdata2;
+                }
+
             }
             if (isPause)
             {
