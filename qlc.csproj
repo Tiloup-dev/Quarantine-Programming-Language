@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="scripts\Debug.qlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="scripts\HelloWorld.qlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

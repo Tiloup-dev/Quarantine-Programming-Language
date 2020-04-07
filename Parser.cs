@@ -4,6 +4,8 @@ using System.Text;
 using lsc;
 using System.IO;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace lsc
 {
@@ -21,7 +23,14 @@ namespace lsc
             bool currentbooldata = false;
             bool currentbooldata2 = false;
 
+            int loopbacker = 1;
+            bool isLooped = false;
             string[] lines = File.ReadAllLines(path);
+            if (isLooped)
+            {
+
+            }
+        restart:
             foreach (string line in lines)
             {
                 //NORMAL PRINTS
@@ -212,7 +221,12 @@ namespace lsc
                 {
                     currentintdata = 0;
                     int pointer = line.IndexOf(':') + 1;
-                    currentintdata = int.Parse(line.Substring(pointer, line.Length - 8));
+                    string data = line.Substring(pointer, line.Length - 8);
+                    if (data == "(random)")
+                    {
+                        Random random = new Random();
+                        currentintdata = random.Next();
+                    }
                 }
                 else if (line.Contains("integer(readline)"))
                 {
@@ -224,7 +238,12 @@ namespace lsc
                 {
                     currentintdata2 = 0;
                     int pointer = line.IndexOf(':') + 1;
-                    currentintdata2 = int.Parse(line.Substring(pointer, line.Length - 9));
+                    string data = line.Substring(pointer, line.Length - 8);
+                    if (data == "(random)")
+                    {
+                        Random random = new Random();
+                        currentintdata2 = random.Next();
+                    }
                 }
                 else if (line.Contains("integer2(readline)"))
                 {
@@ -340,6 +359,24 @@ namespace lsc
                 if (line.Contains("clear"))
                 {
                     Console.Clear();
+                }
+
+                if (line.Contains("wait:"))
+                {
+                    int pointer = line.IndexOf(':') + 1;
+                    int value = int.Parse(line.Substring(pointer, line.Length - 5));
+                    Thread.Sleep(value);
+                }
+
+                if (line.Contains("loopback:"))
+                {
+                    int pointer = line.IndexOf(':') + 1;
+                    int value = int.Parse(line.Substring(pointer, line.Length - 9));
+                    while (loopbacker < value)
+                    {
+                        loopbacker++;
+                        goto restart;
+                    }
                 }
             }
             if (isPause)

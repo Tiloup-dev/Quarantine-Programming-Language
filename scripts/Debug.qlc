@@ -1,0 +1,4 @@
+﻿integer:(random)
+println(int)
+wait:500
+loopback:0

@@ -3,7 +3,7 @@
 string:Hello,
 string2:World!
 There is only two str1ngs avaible for now.
-
+wait:1000
 Write data to screen
 print(string)
-print(string2)
+println(string2)

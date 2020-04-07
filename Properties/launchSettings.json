@@ -2,7 +2,7 @@
   "profiles": {
     "qlc": {
       "commandName": "Project",
-      "commandLineArgs": "scripts/HelloWorld.qlc"
+      "commandLineArgs": "scripts/Debug.qlc -pause"
     }
   }
 }
