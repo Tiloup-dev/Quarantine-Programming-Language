@@ -13,3 +13,12 @@ C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.pdb
 C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.genruntimeconfig.cache
 C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\scripts\HelloWorld.qlc
 C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\scripts\Debug.qlc
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\System.Windows.Forms.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\Accessibility.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\System.Deployment.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\fr\System.Windows.Forms.resources.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\fr\System.Deployment.resources.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\fr\System.Runtime.Serialization.Formatters.Soap.resources.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.csproj.CopyComplete
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\scripts\header.qlc
