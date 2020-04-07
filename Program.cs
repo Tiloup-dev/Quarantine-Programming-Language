@@ -23,10 +23,15 @@ namespace lsc
                     string isPaused = args[1];
                     if (isPaused == "-pause")
                     {
-                        Parser.Parse(path, true);
+                        Parser.Parse(path, true, "");
+                    }
+                    if (args.Length == 3)
+                    {
+                        string headerpath = args[2];
+                        Parser.Parse(path, true, headerpath);
                     }
                 } else
-                Parser.Parse(path, false);
+                Parser.Parse(path, false, "");
             }
             
             else
