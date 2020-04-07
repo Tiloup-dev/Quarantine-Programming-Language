@@ -1,0 +1,13 @@
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\qlc.exe
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\qlc.deps.json
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\qlc.runtimeconfig.json
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\qlc.runtimeconfig.dev.json
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\qlc.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\qlc.pdb
+C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.csprojAssemblyReference.cache
+C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.csproj.CoreCompileInputs.cache
+C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.AssemblyInfoInputs.cache
+C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.AssemblyInfo.cs
+C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.dll
+C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.pdb
+C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.genruntimeconfig.cache
