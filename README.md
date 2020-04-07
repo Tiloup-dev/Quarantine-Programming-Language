@@ -1,10 +1,10 @@
 # Quarantine-Programming-Language
 Scripting language that uses an interpreter to be executed.
 
-#How to use
+# How to use
 qlc [FilePath] [-pause to pause the program at the end]
 
-#Basic commands
+# Basic commands
 print:text (print to screen)
 println:text (print to screen + \n)
 
@@ -27,4 +27,3 @@ clearvariables (sets all integers, strings, characters and booleans to their def
 clear (Cleares the screen)
 
 loopback (Loopback the program)
-
