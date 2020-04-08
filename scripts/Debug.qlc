@@ -1,6 +1,3 @@
 ﻿[Property:Header]=false
-println(string2)
-string(readline)
-string(transform)[string2][2,1]
-clear
-loopback:i
+changetitle:Change the title!
+println:0.01pre_02!
