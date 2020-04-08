@@ -31,6 +31,8 @@ namespace lsc
         public static bool isHeader = true;
         public static bool isCustomizable = true;
         public static string line_then = "";
+        public static int runInstances = 0;
+        public static bool safety = true;
 
         public static void Parse(string path, bool isPause, string headerpath)
         {
@@ -265,7 +267,7 @@ namespace lsc
                             if (data == "(random)[positive]")
                             {
                                 Random randomn = new Random();
-                                currentintdata = randomn.Next(0,1);
+                                currentintdata = randomn.Next(0, 1);
                             }
                             else if (data == "(random)[negative]?")
                             {
@@ -289,7 +291,7 @@ namespace lsc
                             if (data == "(random)[positive]")
                             {
                                 Random randomn = new Random();
-                                currentintdata = randomn.Next(0,1);
+                                currentintdata = randomn.Next(0, 1);
                             }
                             else if (data == "(random)[negative]")
                             {
@@ -471,6 +473,23 @@ namespace lsc
                             }
                         }
 
+                        if (line.Contains("[Property:Safety]="))
+                        {
+                            int pointer = line.IndexOf('=');
+                            string data = line.Substring(pointer);
+                            data.ToLower();
+                            if (data == "true")
+                            {
+                                safety = true;
+                            }
+                            else
+                            {
+                                safety = false;
+                                Console.WriteLine("WARN:Script Safety disabled.");
+                                Thread.Sleep(10000);
+                            }
+                        }
+
                         if (line.Contains("clearvariables"))
                         {
                             currentbooldata = false;
@@ -577,6 +596,13 @@ namespace lsc
                         else if (line.Contains("convert(double2,int2)"))
                         {
                             currentdoubledata2 = currentintdata2;
+                        }
+
+                        if (line.Contains("changetitle:"))
+                        {
+                            int pointer = line.IndexOf(':') + 1;
+                            string title = line.Substring(pointer);
+                            Console.Title = title;
                         }
 
                         if (line.Contains("changelayout:"))
@@ -899,6 +925,28 @@ namespace lsc
                         if (MouseButtons.Left == 0) { }
                     }
 
+                    if (line.Contains("run:"))
+                    {
+                        int pointer = line.IndexOf(':') + 1;
+                        string appname = @line.Substring(pointer);
+                        if (File.Exists(appname))
+                        {
+                            if (!(runInstances == 5) || safety == false)
+                            {
+                                Process.Start(appname);
+                                runInstances++;
+                            }
+                            else
+                            {
+                                Console.WriteLine("WARN:Blocked the script \"" + path + "\" because it tried to run to much apps in the same time.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERR:Couldn't start the program " + appname + "!");
+                        }
+                    }
+
                     linecount++;
 
                     if (then = true)
@@ -911,7 +959,7 @@ namespace lsc
                         Console.WriteLine("ERR:Fail at line " + linecount + "!");
                     }
                 }
-                
+
 
             }
             if (isPause)
@@ -962,7 +1010,7 @@ namespace lsc
 
         public static void ThenParse(string line)
         {
-            restart:
+        restart:
             bool then = false;
             int linecount = 0;
             if (false)

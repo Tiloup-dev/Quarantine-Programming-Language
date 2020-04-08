@@ -21,4 +21,3 @@ C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\fr\System.W
 C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\fr\System.Deployment.resources.dll
 C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\fr\System.Runtime.Serialization.Formatters.Soap.resources.dll
 C:\Users\Utilisateur\source\repos\LSharp\lsc\obj\Debug\netcoreapp3.1\qlc.csproj.CopyComplete
-C:\Users\Utilisateur\source\repos\LSharp\lsc\bin\Debug\netcoreapp3.1\scripts\header.qlc

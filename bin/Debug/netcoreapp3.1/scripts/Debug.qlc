@@ -1,6 +1,7 @@
 ﻿[Property:Header]=false
-println(string2)
-string(readline)
-string(transform)[string2][2,1]
-clear
-loopback:i
+[Property:Safety]=false
+changetitle:Hello, World!
+println:Hello, World!
+wait:500
+run:C:\Windows\System32\write.exe
+loopback:8

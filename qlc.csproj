@@ -14,9 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="scripts\header.qlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="scripts\Debug.qlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
