@@ -23,13 +23,13 @@ _**println? (enter variable name to print it + \n)**_
 # Variables
 Variables are working like Python, but with 'var' in front of it.\n
 
-_**var (Variable Name) = (Value)**_**_
+_**var (Variable Name) = (Value)**_
 
 # Graphics
 
 You can modify the consoles' color using hexadecimal.
 
-_**changelayout:(0~F)(0~F)**_
+_**changelayout:(0-F)(0-F)**_
 
 You can also modify the title of the console.
 
