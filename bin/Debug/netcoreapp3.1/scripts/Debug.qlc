@@ -1,3 +1,10 @@
 ﻿[Property:Header]=false
-changetitle:Change the title!
-println:0.01pre_02!
+changelayout:B0
+changetitle:Custom variables example
+var first_term = 1.43
+var second_term = 1.43
+int.add?1first_term ?2second_term ?3first_term
+int.mul?1first_term ?2second_term ?3first_term
+var loopbackamount = 100
+println?first_term
+loopback?loopbackamount
