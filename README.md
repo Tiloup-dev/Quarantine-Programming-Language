@@ -1,6 +1,8 @@
 # Quarantine-Programming-Language
 Scripting language that uses an interpreter to be executed.
 
+If you ask why the name, it is because the first versions of the program was made when the COVID-19 pandemia was present.
+
 # How to use
 Install .NET Core 3.1 Runtime for your Operating System (Link:https://dotnet.microsoft.com/download/)
 
